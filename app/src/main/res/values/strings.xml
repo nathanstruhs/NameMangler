@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">NameMangler</string>
+    <string name="first_name">First Name:</string>
+    <string name="empty_edit_text_toast">Please enter a name.</string>
+    <string name="mangle_button">Mangle!</string>
+    <string name="reset_button">Reset</string>
+    <string name="remangle_button">Re-mangle!</string>
+    <string-array name="random_word_array">
+        <item>Magnificent</item>
+        <item>Great</item>
+        <item>Good</item>
+        <item>Bad</item>
+        <item>Ugly</item>
+    </string-array>
+    <string name="mangled_name">%1$s %2$s</string>
 </resources>

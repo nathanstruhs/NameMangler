@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:orientation="vertical"
+              android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/mangled_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/mangled_name"
+        android:gravity="center"
+        android:textSize="28dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/reset_button" />
+
+        <Button
+            android:id="@+id/remangle_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/remangle_button" />
+
+    </LinearLayout>
+
+</LinearLayout>
