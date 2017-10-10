@@ -12,5 +12,5 @@
         <item>Bad</item>
         <item>Ugly</item>
     </string-array>
-    <string name="mangled_name">%1$s %2$s</string>
+    <string name="mangled_name">%1$s</string>
 </resources>

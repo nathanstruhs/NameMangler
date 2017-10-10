@@ -63,8 +63,9 @@ public class MangledNameActivity extends AppCompatActivity {
     }
 
     private void mangle(String name, String random_word) {
+        MangledName mangledName = new MangledName(name, random_word);
         Resources res = getResources();
-        String mangled_name = res.getString(R.string.mangled_name, name, random_word);
+        String mangled_name = res.getString(R.string.mangled_name, mangledName.toString());
         setTextView(mangled_name);
     }
 
