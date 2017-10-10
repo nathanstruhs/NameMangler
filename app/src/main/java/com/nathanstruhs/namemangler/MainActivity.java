@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 nameInput = (EditText) findViewById(R.id.name_input);
                 nameInputString = nameInput.getText().toString();
                 if (nameInputString.isEmpty()) {
-                    show_empty_name_toast();
+                    showEmptyNameToast();
                 } else {
                     sendMessage(nameInputString);
                 }
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void show_empty_name_toast() {
+    private void showEmptyNameToast() {
         String text = getResources().getString(R.string.empty_edit_text_toast);
         Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
         toast.show();

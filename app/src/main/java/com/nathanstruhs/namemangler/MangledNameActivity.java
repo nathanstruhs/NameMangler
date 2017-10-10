@@ -30,7 +30,7 @@ public class MangledNameActivity extends AppCompatActivity {
             currentRandomWord = savedInstanceState.getString(KEY_RANDOM);
             mangle(nameInputString, currentRandomWord);
         } else {
-            currentRandomWord = get_random_word();
+            currentRandomWord = getRandomWord();
             mangle(nameInputString, currentRandomWord);
         }
 
@@ -44,7 +44,7 @@ public class MangledNameActivity extends AppCompatActivity {
         remangleButton = (Button) findViewById(R.id.remangle_button);
         remangleButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mangle(nameInputString, get_random_word());
+                mangle(nameInputString, getRandomWord());
             }
         });
     }
@@ -54,7 +54,7 @@ public class MangledNameActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private String get_random_word() {
+    private String getRandomWord() {
         Resources res = getResources();
         String[] random_words = res.getStringArray(R.array.random_word_array);
         int random_index = new Random().nextInt(random_words.length);
@@ -65,10 +65,10 @@ public class MangledNameActivity extends AppCompatActivity {
     private void mangle(String name, String random_word) {
         Resources res = getResources();
         String mangled_name = res.getString(R.string.mangled_name, name, random_word);
-        set_text_view(mangled_name);
+        setTextView(mangled_name);
     }
 
-    private void set_text_view(String mangled_name) {
+    private void setTextView(String mangled_name) {
         TextView textView = (TextView) findViewById(R.id.mangled_name_text_view);
         textView.setText(mangled_name);
     }
