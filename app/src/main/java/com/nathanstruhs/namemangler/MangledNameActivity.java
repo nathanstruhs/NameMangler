@@ -19,7 +19,6 @@ public class MangledNameActivity extends AppCompatActivity {
     private Button reset_button;
     private Button remangle_button;
     private String name_input_string;
-
     public static final String KEY_RANDOM = "random_word";
     private String current_random_word;
 
@@ -63,7 +62,8 @@ public class MangledNameActivity extends AppCompatActivity {
         Resources res = getResources();
         String[] random_words = res.getStringArray(R.array.random_word_array);
         int random_index = new Random().nextInt(random_words.length);
-        return random_words[random_index];
+        current_random_word = random_words[random_index];
+        return current_random_word;
     }
 
     private void mangle(String name, String random_word) {
