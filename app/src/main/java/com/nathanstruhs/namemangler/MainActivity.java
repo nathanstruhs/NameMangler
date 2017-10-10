@@ -1,8 +1,6 @@
 package com.nathanstruhs.namemangler;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,13 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-
 public class MainActivity extends AppCompatActivity {
 
-    private EditText name_input;
-    private Button mangle_button;
-    private String name_input_string;
+    private EditText nameInput;
+    private Button mangleButton;
+    private String nameInputString;
 
     public static final String KEY_NAME = "name";
 
@@ -25,15 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mangle_button = (Button) findViewById(R.id.mangle_button);
-        mangle_button.setOnClickListener(new View.OnClickListener() {
+        mangleButton = (Button) findViewById(R.id.mangle_button);
+        mangleButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                name_input = (EditText) findViewById(R.id.name_input);
-                name_input_string = name_input.getText().toString();
-                if (name_input_string.isEmpty()) {
+                nameInput = (EditText) findViewById(R.id.name_input);
+                nameInputString = nameInput.getText().toString();
+                if (nameInputString.isEmpty()) {
                     show_empty_name_toast();
                 } else {
-                    sendMessage(name_input_string);
+                    sendMessage(nameInputString);
                 }
             }
         });

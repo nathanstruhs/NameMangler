@@ -6,21 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
 
-import static android.R.attr.max;
-import static android.R.attr.restoreAnyVersion;
-
 public class MangledNameActivity extends AppCompatActivity {
 
-    private Button reset_button;
-    private Button remangle_button;
-    private String name_input_string;
+    private Button resetButton;
+    private Button remangleButton;
+    private String nameInputString;
     public static final String KEY_RANDOM = "random_word";
-    private String current_random_word;
+    private String currentRandomWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +24,27 @@ public class MangledNameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mangled_name);
 
         Intent intent = getIntent();
-        name_input_string = intent.getStringExtra(MainActivity.KEY_NAME);
+        nameInputString = intent.getStringExtra(MainActivity.KEY_NAME);
 
         if (savedInstanceState != null) {
-            current_random_word = savedInstanceState.getString(KEY_RANDOM);
-            mangle(name_input_string, current_random_word);
+            currentRandomWord = savedInstanceState.getString(KEY_RANDOM);
+            mangle(nameInputString, currentRandomWord);
         } else {
-            current_random_word = get_random_word();
-            mangle(name_input_string, current_random_word);
+            currentRandomWord = get_random_word();
+            mangle(nameInputString, currentRandomWord);
         }
 
-        reset_button = (Button) findViewById(R.id.reset_button);
-        reset_button.setOnClickListener(new View.OnClickListener() {
+        resetButton = (Button) findViewById(R.id.reset_button);
+        resetButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 reset();
             }
         });
 
-        remangle_button = (Button) findViewById(R.id.remangle_button);
-        remangle_button.setOnClickListener(new View.OnClickListener() {
+        remangleButton = (Button) findViewById(R.id.remangle_button);
+        remangleButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mangle(name_input_string, get_random_word());
+                mangle(nameInputString, get_random_word());
             }
         });
     }
@@ -62,8 +58,8 @@ public class MangledNameActivity extends AppCompatActivity {
         Resources res = getResources();
         String[] random_words = res.getStringArray(R.array.random_word_array);
         int random_index = new Random().nextInt(random_words.length);
-        current_random_word = random_words[random_index];
-        return current_random_word;
+        currentRandomWord = random_words[random_index];
+        return currentRandomWord;
     }
 
     private void mangle(String name, String random_word) {
@@ -79,7 +75,7 @@ public class MangledNameActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putString(KEY_RANDOM, current_random_word);
+        outState.putString(KEY_RANDOM, currentRandomWord);
         super.onSaveInstanceState(outState);
     }
 }
