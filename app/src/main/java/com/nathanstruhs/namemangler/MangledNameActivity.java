@@ -50,8 +50,7 @@ public class MangledNameActivity extends AppCompatActivity {
     }
 
     private void reset() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 
     private String getRandomWord() {
