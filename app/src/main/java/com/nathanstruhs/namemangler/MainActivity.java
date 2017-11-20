@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mangleButton = (Button) findViewById(R.id.mangle_button);
+        mangleButton = (Button) findViewById(R.id.mangle_nicely_button);
         mangleButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nameInput = (EditText) findViewById(R.id.name_input);

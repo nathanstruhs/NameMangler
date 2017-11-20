@@ -23,12 +23,20 @@
         android:inputType="text"/>
 
     <Button
-        android:id="@+id/mangle_button"
+        android:id="@+id/mangle_nicely_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/mangle_button"
+        android:text="@string/mangle_nicely_text"
         android:minWidth="10dp"
         android:textAllCaps="false"
         android:textSize="18dp"/>
 
+    <Button
+        android:id="@+id/mangle_rudely_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/mangle_rudely_text"
+        android:minWidth="10dp"
+        android:textAllCaps="false"
+        android:textSize="18dp"/>
 </LinearLayout>

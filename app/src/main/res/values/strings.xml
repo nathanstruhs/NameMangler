@@ -2,7 +2,8 @@
     <string name="app_name">NameMangler</string>
     <string name="first_name">First Name:</string>
     <string name="empty_edit_text_toast">Please enter a name.</string>
-    <string name="mangle_button">Mangle!</string>
+    <string name="mangle_nicely_text">Mangle Nicely</string>
+    <string name="mangle_rudely_text">Mangle Rudely</string>
     <string name="reset_button">Reset</string>
     <string name="remangle_button">Re-mangle!</string>
     <string-array name="random_word_array">

@@ -21,7 +21,7 @@ public class MangledNameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mangled_name);
+        setContentView(R.layout.activity_nicely_mangled_name);
 
         Intent intent = getIntent();
         nameInputString = intent.getStringExtra(MainActivity.KEY_NAME);
