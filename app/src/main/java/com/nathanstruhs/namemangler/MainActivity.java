@@ -11,28 +11,52 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private EditText nameInput;
-    private Button mangleButton;
+    private Button mangleNicelyButton;
+    private Button mangleRudelyButton;
     private String nameInputString;
 
     public static final String KEY_NAME = "name";
+    public static final String KEY_DISPOSITION = "disposition";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        clearEditText();
 
-        mangleButton = (Button) findViewById(R.id.mangle_nicely_button);
-        mangleButton.setOnClickListener(new View.OnClickListener() {
+        mangleNicelyButton = (Button) findViewById(R.id.mangle_nicely_button);
+        mangleNicelyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nameInput = (EditText) findViewById(R.id.name_input);
                 nameInputString = nameInput.getText().toString();
+                final String disposition = "nicely";
                 if (nameInputString.isEmpty()) {
                     showEmptyNameToast();
                 } else {
-                    sendMessage(nameInputString);
+                    sendMessage(nameInputString, disposition);
                 }
             }
         });
+
+        mangleRudelyButton = (Button) findViewById(R.id.mangle_rudely_button);
+        mangleRudelyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                nameInput = (EditText) findViewById(R.id.name_input);
+                nameInputString = nameInput.getText().toString();
+                final String disposition = "rudely";
+                if (nameInputString.isEmpty()) {
+                    showEmptyNameToast();
+                } else {
+                    sendMessage(nameInputString, disposition);
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        clearEditText();
     }
 
     private void showEmptyNameToast() {
@@ -41,9 +65,15 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public void sendMessage(String name) {
+    public void sendMessage(String name, String disposition) {
         Intent intent = new Intent(this, MangledNameActivity.class);
         intent.putExtra(KEY_NAME, name);
+        intent.putExtra(KEY_DISPOSITION, disposition);
         startActivity(intent);
+    }
+
+    public void clearEditText() {
+        nameInput = (EditText) findViewById(R.id.name_input);
+        nameInput.setText("");
     }
 }

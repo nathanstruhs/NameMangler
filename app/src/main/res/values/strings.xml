@@ -6,12 +6,19 @@
     <string name="mangle_rudely_text">Mangle Rudely</string>
     <string name="reset_button">Reset</string>
     <string name="remangle_button">Re-mangle!</string>
-    <string-array name="random_word_array">
+    <string-array name="random_nice_word_array">
         <item>Magnificent</item>
         <item>Great</item>
         <item>Good</item>
+        <item>Gooood</item>
+        <item>Grrr8</item>
+    </string-array>
+    <string-array name="random_rude_word_array">
         <item>Bad</item>
-        <item>Ugly</item>
+        <item>Not So Gr8</item>
+        <item>Really Bad</item>
+        <item>Terrible</item>
+        <item>No Good</item>
     </string-array>
     <string name="mangled_name">%1$s</string>
 </resources>
